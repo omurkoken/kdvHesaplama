@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class kdvHesaplama {
+    public static void main(String[] args) {
+        //değişkenleri oluşturalım
+        double tutar, kdvOran = 0.18, kdvTutar, kdvliTutar;
+
+        // scanner sınıfını tanımladık
+        Scanner input = new Scanner(System.in);
+
+        //kullanıcıdan değer al
+
+        System.out.print("Ücret Tutarının Giriniz:");
+
+        //işlemleri hesaplama
+
+        tutar = input.nextDouble();
+        kdvTutar = tutar * kdvOran;
+        kdvliTutar = tutar + kdvTutar;
+
+        //işlemlerini çıktısını alıyoruz
+
+       /**
+        * normal hesap için kullanıcak alan
+        * System.out.println("kdvsiz tutar:"+tutar);
+        System.out.println("kdvOran:"+kdvOran);
+        System.out.println("kdv tutarı:"+kdvTutar);
+        System.out.println("toplam ödenecek tutar:"+kdvliTutar); */
+
+        // tutar 0-1000 arası ise kdv .18 , 1001 ve üzeri ise kdv .8 olarak hesaplama
+
+        System.out.println(tutar>0 && tutar<1000 ? "KDV'li fiyat:"+(tutar+tutar*0.18) :"KDV'li fiyat:"+ (tutar+tutar*0.08) );
+
+
+
+
+
+
+    }
+}
